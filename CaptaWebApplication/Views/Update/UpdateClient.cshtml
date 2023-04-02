@@ -1,0 +1,36 @@
+﻿@model CaptaWebApplication.Models.Client
+
+<h1>Atualizar Cliente</h1>
+<br />
+@using (Html.BeginForm("Update", "Update", FormMethod.Post))
+{
+    <table class="col-11" style="margin-top:5%;">
+        <tr>
+            <th>Nome</th>
+            <td>@Html.EditorFor(model => model.nome)</td>
+        </tr>
+        <tr>
+            <th>Sexo</th>
+            <td>@Html.EditorFor(model => model.sexo)</td>
+        </tr>
+        <tr>
+            <th>situação Cliente</th>
+            <td>@Html.EditorFor(model => model.situacaoCliente)</td>
+        </tr>
+        <tr>
+            <th>Tipo Cliente</th>
+            <td>@Html.EditorFor(model => model.tipoCliente)</td>
+        </tr>
+        <tr>
+            @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { type = "hidden" } })
+        </tr>
+        
+    </table>
+    <input type="submit" value="Atualizar">
+}
+
+<style type="text/css">
+    body {
+        background-image: linear-gradient( lightblue, lightblue);
+    }
+</style>

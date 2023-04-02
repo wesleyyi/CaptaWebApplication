@@ -1,0 +1,5 @@
+Essa solution possui dentro dela a Aplicação do projeto, depois de executar todos os passos da instrução_1 basta executar esse projeto e utilizar ele como usuário final
+
+Ele possui uma listagem de todos clientes cadastrados no banco na pagina principal tendo opção de atualizar o cadastro ou apagar e um botão para criação de de um novo cliente
+
+É interessante informar que todos os itens necessários para conversar com a api se encontram no "appsettings.json" dentro do projeto

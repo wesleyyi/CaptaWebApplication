@@ -1,0 +1,70 @@
+﻿@model CaptaWebApplication.Models.VMLogin
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<br>
+@if (Model.clients != null)
+{
+    <h1>Lista de Clientes</h1>
+    <br />
+    <table class="col-11" style="margin-top:5%;">
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                Cpf
+            </th>
+            <th>
+                Sexo
+            </th>
+            <th>
+                Tipo Cliente
+            </th>
+            <th>
+                Situação do Cliente
+            </th>
+            <th>
+                Apagar
+            </th>
+            <th>
+                Atualizar
+            </th>
+        </tr>
+        @foreach (Client item in Model.clients)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cpf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sexo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipoCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.situacaoCliente)
+                </td>
+                <td>
+                    @Html.ActionLink("Apagar", "DeleteClient", "Home", new { cpf = item.cpf }, null)
+                </td>
+                <td>
+                    @Html.ActionLink("Atualizar", "UpdateClient", "Update", new { cpf = item.cpf }, null)
+                </td>
+            </tr>
+        }
+    </table>
+}
+
+@Html.ActionLink("Criar novo cliente", "Create", "Create")
+
+<style type="text/css">
+    body {
+        background-image: linear-gradient( lightblue, lightblue);
+    }
+</style>
